@@ -36,7 +36,8 @@ One of the other talks at the meetup, <a href="https://www.youtube.com/watch?v=Q
 <ul>
 <li>It has an established, secure and most importantly, fast, master-minion setup </li>
 <li>It has built in scheduling capability both for the master and separately for the minions.</li>
-<li>It already has built in support for piping whatever comes back from your minion status checks into graphite, mysql/postgres/sqlite, cassandra/mongo/redis/couch, etc in its <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a>
+<li>It already has built in support for piping whatever comes back from your minion status checks into MySQL/Postgres/SQLite, Cassandra/Mongo/Redis/Couch, etc in its <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a>
+<li>The same <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a> system can also be used to populate a graphing service such as <a href="http://graphite.wikidot.com/" target="_blank">Graphite</a>, or an alerting service such as <a href="https://www.getsentry.com" target="_blank">Sentry</a>.
 </li>
 <li>It can act on event on the minions using it's <a href="https://salt.readthedocs.org/en/latest/topics/event/index.html">events</a> and <a href="https://salt.readthedocs.org/en/latest/topics/reactor/index.html">reactor</a> systems to restart services etc</li>
 </ul><p>I've started doing some testing of my own on this, but I'd be very interested in feedback. jay (at) percussiverepair.net</p>
