@@ -27,20 +27,35 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Saltstack Monitoring</h3>
-		<p><small>19th Feb 2014</small></p>
+        <h3>
+<a name="saltstack-monitoring" class="anchor" href="#saltstack-monitoring"><span class="octicon octicon-link"></span></a>Saltstack Monitoring</h3>
 
-<p>I <a href="https://www.youtube.com/watch?v=IWvZgdLyfaI&amp;noredirect=1">spoke recently</a> at the Februrary London DevOps meetup about my adventures with solo DevOps and the SaltStack config management system ( <a href="http://goo.gl/FxS6pp">Slides</a> )
-One of the other talks at the meetup, <a href="https://www.youtube.com/watch?v=Q9BagdHGopg">Stop Using Nagios</a> by Andy Sykes from Forward3D (<a href="https://twitter.com/supersheep">@supersheep</a>) got me thinking about using Salt as the core component of a distributed monitoring system. I believe it fits the mould very well:</p>
+<p><em>19th Feb 2014</em></p>
+
+<p>I <a href="https://www.youtube.com/watch?v=IWvZgdLyfaI&amp;noredirect=1">spoke recently</a> at the Februrary London DevOps meetup about my adventures with solo DevOps and the SaltStack config management system ( <a href="http://goo.gl/FxS6pp">Slides</a> )</p>
+
+<p>One of the other talks at the meetup, <a href="https://www.youtube.com/watch?v=Q9BagdHGopg">Stop Using Nagios</a> by Andy Sykes from Forward3D (<a href="https://twitter.com/supersheep">@supersheep</a>) got me thinking about using Salt as the core component of a distributed monitoring system. I believe it fits the mould very well:</p>
 
 <ul>
 <li>It has an established, secure and most importantly, fast, master-minion setup </li>
 <li>It has built in scheduling capability both for the master and separately for the minions.</li>
-<li>It already has built in support for piping whatever comes back from your minion status checks into MySQL/Postgres/SQLite, Cassandra/Mongo/Redis/Couch, etc in its <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a>
-<li>The same <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a> system can also be used to populate a graphing service such as <a href="http://graphite.wikidot.com/" target="_blank">Graphite</a>, or an alerting service such as <a href="https://www.getsentry.com" target="_blank">Sentry</a>.
+<li>It already has built in support for piping whatever comes back from your minion status checks into graphite, mysql/postgres/sqlite, cassandra/mongo/redis/couch, etc in its <a href="https://salt.readthedocs.org/en/latest/ref/returners/index.html">Returners</a>
 </li>
-<li>It can act on event on the minions using it's <a href="https://salt.readthedocs.org/en/latest/topics/event/index.html">events</a> and <a href="https://salt.readthedocs.org/en/latest/topics/reactor/index.html">reactor</a> systems to restart services etc</li>
+<li>It can act on event on the minions using it's <a href="https://salt.readthedocs.org/en/latest/topics/event/index.html">events</a> and <a href="https://salt.readthedocs.org/en/latest/topics/reactor/index.html">reactor</a> systems</li>
 </ul><p>I've started doing some testing of my own on this, but I'd be very interested in feedback. jay (at) percussiverepair.net</p>
+
+<h3>
+<a name="cwgraphs-for-aws-instances" class="anchor" href="#cwgraphs-for-aws-instances"><span class="octicon octicon-link"></span></a>CWGraphs for AWS Instances</h3>
+
+<p><em>13th Jan 2014</em></p>
+
+<p>For some time I've been using <a href="http://aws.amazon.com/cloudwatch/">Cloudwatch</a> as a supplement to my other graphing and monitoring packages, but I finally got tired of the poor UI and lack of customisation. I had seen and tested some other GitHub releases that seemed like they may do the trick to allow me to run my own CW graphs but none had the features I required. So i wrote my own. </p>
+
+<p>Based on <a href="https://github.com/manuskc/aws-cloudchart">aws-cloudchart</a> I have built a set of tools that will give a much better at-a-glance insight into your AWS EC2, RDS and ELB instances.</p>
+
+<p>Take a look here: <a href="https://github.com/PercussiveRepair/cwgraphs">https://github.com/PercussiveRepair/cwgraphs</a></p>
+
+<p>The code should be fairly easy to follow and it uses the older AWS PHP-SDK v 1.62 as it's base interface with the Amazon Cloudwatch API. And all it needs is a set of IAM creds. Feel free to fork and improve.</p>
       </section>
     </div>
 
